@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxh2x2xfc8ar7"]
+
+[ext_resource type="Texture2D" uid="uid://du1bolmvk3qly" path="res://assets/plateform/PNG/Tiles/tile39.png" id="1_npg1n"]
+[ext_resource type="PackedScene" uid="uid://dg2n352why1kf" path="res://scenes/kill_zone.tscn" id="2_62q8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62q8x"]
+size = Vector2(18, 18)
+
+[node name="Trap" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_npg1n")
+
+[node name="KillZone" parent="." instance=ExtResource("2_62q8x")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("RectangleShape2D_62q8x")
